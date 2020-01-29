@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ak-29-GLp">
-                                <rect key="frame" x="137.5" y="28" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="64" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="0FC-Vp-4LP"/>
@@ -24,7 +24,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f4q-P7-Xc1">
-                                <rect key="frame" x="137.5" y="148" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="184" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -33,7 +33,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHV-Xx-epX">
-                                <rect key="frame" x="137.5" y="268" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="304" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="R7i-ga-O7F"/>
@@ -44,18 +44,21 @@
                                 <rect key="frame" x="55" y="537" width="265" height="63"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="wu3-tZ-9Gv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="265" id="wu3-tZ-9Gv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeColorButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="F6V-IN-mCA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83043175633183597" green="0.83043175633183597" blue="0.83043175633183597" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fHV-Xx-epX" firstAttribute="top" secondItem="f4q-P7-Xc1" secondAttribute="bottom" constant="20" id="9rQ-RU-EI1"/>
-                            <constraint firstItem="3ak-29-GLp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="HtS-C7-Iso"/>
+                            <constraint firstItem="3ak-29-GLp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="HtS-C7-Iso"/>
                             <constraint firstItem="Cvs-ht-P0L" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LR7-me-GSh"/>
                             <constraint firstItem="f4q-P7-Xc1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ulp-K6-k11"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cvs-ht-P0L" secondAttribute="bottom" constant="67" id="ZQf-di-Goq"/>
@@ -65,6 +68,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="firstLightView" destination="3ak-29-GLp" id="PFM-8x-ZSW"/>
+                        <outlet property="secondLightView" destination="f4q-P7-Xc1" id="uTW-uu-MaT"/>
+                        <outlet property="switchButton" destination="Cvs-ht-P0L" id="0iH-Au-yUj"/>
+                        <outlet property="thirdLightView" destination="fHV-Xx-epX" id="bak-AC-Xzn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
