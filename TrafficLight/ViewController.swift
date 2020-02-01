@@ -12,6 +12,7 @@ enum CurrentLight {
 	case red
 	case yellow
 	case green
+	case none
 }
 
 class ViewController: UIViewController {
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
 	@IBOutlet var thirdLightView: UIView!
 	@IBOutlet var switchButton: UIButton!
 	
-	private var currentLight = CurrentLight.red
+	private var currentLight = CurrentLight.none
 	
 	private let lightOpacity: CGFloat = 0.3
 	private let fullLightOpacity: CGFloat = 1
@@ -47,30 +48,23 @@ class ViewController: UIViewController {
 		switchButton.setTitle("Next", for: .normal)
 		
 		switch currentLight {
+		case .none:
+			currentLight = .red
+			firstLightView.alpha = fullLightOpacity
 		case .red:
+			currentLight = .yellow
+			secondLightView.alpha = fullLightOpacity
+			firstLightView.alpha = lightOpacity
+		case .yellow:
+			currentLight = .green
+			thirdLightView.alpha = fullLightOpacity
+			secondLightView.alpha = lightOpacity
+		case .green:
+			currentLight = .red
 			firstLightView.alpha = fullLightOpacity
 			thirdLightView.alpha = lightOpacity
-			currentLight = .yellow
-		case .yellow:
-			firstLightView.alpha = lightOpacity
-			secondLightView.alpha = fullLightOpacity
-			currentLight = .green
-		case .green:
-			secondLightView.alpha = lightOpacity
-			thirdLightView.alpha = fullLightOpacity
-			currentLight = .red
+			
 		}
-		
-//		if (firstLightView.alpha != fullLightOpacity && secondLightView.alpha != fullLightOpacity || thirdLightView.alpha == fullLightOpacity) {
-//			firstLightView.alpha = fullLightOpacity
-//			thirdLightView.alpha = lightOpacity
-//		} else if (firstLightView.alpha == fullLightOpacity) {
-//			secondLightView.alpha = fullLightOpacity
-//			firstLightView.alpha = lightOpacity
-//		} else if (secondLightView.alpha == fullLightOpacity){
-//			secondLightView.alpha = lightOpacity
-//			thirdLightView.alpha = fullLightOpacity
-//		}
 	}
 	
 	
